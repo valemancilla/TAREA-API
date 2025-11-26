@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to left, #201f1f, #6c6b6b);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+}
+
+.overlay-box {
+    background-color: #3a3a3a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.esc-key {
+    border: 1px solid white;
+    padding: 1px 5px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 35px;
+}
+
+h1 {
+    color: white;
+    font-size: 120px;
+    font-weight: 600;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 90%;
+    max-width: 700px;
+}
+
+.input-container {
+    display: flex;
+    align-items: stretch;
+    background-color: #4a4a4a;
+    border: 1px solid #b0b0b0;
+    border-radius: 30px;
+    padding: 2px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.input-field {
+    flex: 1;
+    background-color: #000;
+    border: none;
+    outline: none;
+    padding: 14px 22px;
+    color: white;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    border-radius: 28px 0 0 28px;
+}
+
+.submit-btn {
+    background-color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 28px;
+    color: #000000;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.task-section {
+    width: 90%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.task-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 14px 18px;
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.task-item.removing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.task-text {
+    color: white;
+    font-size: 16px;
+    flex: 1;
+    margin-right: 16px;
+    word-break: break-word;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.task-btn {
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.task-btn:hover {
+    transform: scale(1.05);
+}
+
+.task-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.check-btn {
+    background-color: transparent;
+    color: #4caf50;
+    border: 1px solid #4caf50;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
